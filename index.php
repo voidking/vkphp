@@ -23,8 +23,11 @@ include CORE.'/common/function.php';
 include CORE.'/vk.php';
 
 //将函数注册到SPL __autoload函数队列中。
-spl_autoload_register(function ($class_name) {
-    require_once $class_name . '.php';
-});
+//spl_autoload_register(function ($class_name) {
+//    require_once $class_name . '.php';
+//});
+
+include CORE.'/autoload.php';
+spl_autoload_register('\core\autoload::load');
 
 \core\vk::run();
