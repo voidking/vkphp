@@ -21,13 +21,15 @@ if(DEBUG){
 include CORE.'/common/function.php';
 //p(VKPHP);
 include CORE.'/vk.php';
+\core\vk::run();
 
 //将函数注册到SPL __autoload函数队列中。
-//spl_autoload_register(function ($class_name) {
-//    require_once $class_name . '.php';
-//});
+// spl_autoload_register(function ($class_name) {
+//     require_once $class_name . '.php';
+// });
 
 include CORE.'/autoload.php';
 spl_autoload_register('\core\autoload::load');
+$route = new \core\route();
 
-\core\vk::run();
+
