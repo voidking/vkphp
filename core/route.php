@@ -42,7 +42,9 @@ class route{
             $count = count($patharr);
             $i=2;
             while($i < $count){
-                $this->params[$patharr[$i]] = $patharr[$i+1];
+                if(isset($patharr[$i+1])){
+                    $this->params[$patharr[$i]] = $patharr[$i+1];
+                }
                 $i = $i + 2;
             }
         }else{
