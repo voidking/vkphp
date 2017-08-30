@@ -5,8 +5,8 @@
 namespace core;
 
 class route{
-    public $ctrl;
-    public $action;
+    public $ctrl='index';
+    public $action='index';
     public $params=array();
     public function __construct(){
         //echo 'route is ready!';
@@ -32,13 +32,13 @@ class route{
                 // 去掉index.php
                 $patharr = array_slice($patharr,1,count($patharr)-1);
             }
-            $this->ctrl = $patharr[0];
-
+            if(isset($patharr[0])){
+                $this->ctrl = $patharr[0];
+            }
             if(isset($patharr[1])){
                 $this->action = $patharr[1];
-            } else{
-                $this->action = 'index';
-            }
+            } 
+            
             $count = count($patharr);
             $i=2;
             while($i < $count){
@@ -47,13 +47,10 @@ class route{
                 }
                 $i = $i + 2;
             }
-        }else{
-            $this->ctrl = 'index';
-            $this->action = 'index';
         }
         
-        p($this->ctrl);
-        p($this->action);
-        p($this->params);
+        // p($this->ctrl);
+        // p($this->action);
+        // p($this->params);
     }
 }
