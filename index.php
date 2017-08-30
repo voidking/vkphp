@@ -45,4 +45,10 @@ if(is_file($ctrl_file)){
     throw new \Exception('找不到控制器'.$ctrl_file);
 }
 
+$db = new \core\common\db();
+$sql = 'select * from vk_user';
+$result = $db->query($sql);
+p($result);
+p($result->fetchAll());
+
 
