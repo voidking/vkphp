@@ -9,6 +9,7 @@
 define('VKPHP',realpath('./')); //获取项目所在根目录
 define('CORE',VKPHP.'/core'); //核心文件所在目录
 define('APP',VKPHP.'/app'); //应用文件所在目录
+define('LIB',VKPHP.'/lib'); //第三方库所在目录
 
 define('DEBUG',true); //是否开启调试
 
@@ -20,8 +21,8 @@ if(DEBUG){
 
 include CORE.'/common/function.php';
 //p(VKPHP);
-include CORE.'/vk.php';
-\core\vk::run();
+// include CORE.'/vk.php';
+// \core\vk::run();
 
 //将函数注册到SPL __autoload函数队列中。
 // spl_autoload_register(function ($class_name) {
@@ -45,10 +46,7 @@ if(is_file($ctrl_file)){
     throw new \Exception('找不到控制器'.$ctrl_file);
 }
 
-$db = new \core\common\db();
-$sql = 'select * from vk_user';
-$result = $db->query($sql);
-p($result);
-p($result->fetchAll());
+
+
 
 

@@ -9,9 +9,6 @@ class autoload{
         if(file_exists($class_name.'.php')){
             require_once $class_name.'.php';
             return true;
-        }else{
-            echo 'error: unable to load '.$class_name.'.php';
-            return false;
         }
     }
 }
