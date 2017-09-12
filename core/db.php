@@ -1,5 +1,5 @@
 <?php
-namespace core\common;
+namespace core;
 
 class db extends \PDO{
     public function __construct(){

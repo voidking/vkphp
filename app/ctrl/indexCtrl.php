@@ -8,7 +8,7 @@ class indexCtrl extends \core\render{
     }
 
     public function data(){
-        $db = new \core\common\db();
+        $db = new \core\db();
         $sql = 'select * from vk_user';
         $result = $db->query($sql);
         p($result);
