@@ -12,6 +12,7 @@ define('APP',VKPHP.'/app'); //应用文件所在目录
 define('LIB',VKPHP.'/lib'); //第三方库所在目录
 define('PUBLIC',VKPHP.'/public'); //静态资源目录
 define('CONFIG',VKPHP.'/config'); //配置文件目录
+define('LOG',VKPHP.'/log'); //日志文件目录
 
 define('DEBUG',true); //是否开启调试
 
