@@ -6,6 +6,7 @@ class vk{
     public function run(){
         include CORE.'/autoload.php';
         spl_autoload_register('\core\autoload::load');
+        // include CORE.'/route.php';
         $route = new \core\route();
 
         $ctrl = $route->ctrl;
