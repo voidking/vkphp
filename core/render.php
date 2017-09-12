@@ -6,7 +6,6 @@ class render{
     
     public $smarty;
     public function __construct(){
-        //ini_set('include_path', ini_get('include_path').PATH_SEPARATOR.LIB.'/smarty/libs');
 
         require_once(LIB.'/smarty/libs/Smarty.class.php');
 

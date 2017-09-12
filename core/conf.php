@@ -22,4 +22,14 @@ class conf{
         }
 
     }
+
+    public function all($file){
+        $file_path = CONFIG.'/'.$file.'.php';
+        if(is_file($file_path)){
+            $conf = include $file_path;
+            return $conf;
+        }else{
+            throw new \Exception('找不到配置文件'.$file);
+        }
+    }
 }

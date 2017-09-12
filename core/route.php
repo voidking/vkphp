@@ -16,6 +16,8 @@ class route{
          * 2、获取URL中的控制器和方法
          * 3、获取URL中的参数
          */
+        $this->ctrl = \core\conf::get('CTRL','route_config');
+        $this->action = \core\conf::get('ACTION','route_config');
         if(isset($_SERVER['REQUEST_URI']) && $_SERVER['REQUEST_URI'] != '/' ){
             $path = $_SERVER['REQUEST_URI'];
             $patharr = explode('/',trim($path, '/'));
