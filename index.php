@@ -22,10 +22,11 @@ if(DEBUG){
     ini_set('display_errors', 'Off');
 }
 
+
+
 include CORE.'/function.php';
 include CORE.'/vk.php';
 \core\vk::run();
-
 
 
 

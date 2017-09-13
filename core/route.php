@@ -24,11 +24,16 @@ class route{
         }else{
             $patharr = array();
         }
-        
-        if(isset($_SERVER['HTTP_HOST']) && ($_SERVER['HTTP_HOST'] == 'localhost' || $_SERVER['HTTP_HOST'] == '127.0.0.1') ){
+        //echo json_encode($_SERVER);
+        //var_dump($patharr);
+        $os = strtoupper(substr(PHP_OS,0,3))==='WIN'? 'windows':'linux';
+        $arr = $os==='windows'? explode('\\',VKPHP) : explode('/',VKPHP);
+        $project_name = end($arr);
+        if(isset($_SERVER['HTTP_HOST']) && $patharr[0] == $project_name){
             // 去掉项目名称
             $patharr = array_slice($patharr,1,count($patharr)-1);
         }
+
         if(isset($patharr[0])){
             if($patharr[0] == 'index.php'){
                 // 去掉index.php
