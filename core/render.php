@@ -7,10 +7,7 @@ class render{
     public $smarty;
     public function __construct(){
 
-        require_once(LIB.'/smarty/libs/Smarty.class.php');
-
         $this->smarty = new \Smarty();
-
         $this->smarty->setTemplateDir(APP.'/smarty/templates/');
         $this->smarty->setCompileDir(APP.'/smarty/templates_c/');
         $this->smarty->setConfigDir(APP.'/smarty/configs/');

@@ -29,7 +29,7 @@ class route{
         $os = strtoupper(substr(PHP_OS,0,3))==='WIN'? 'windows':'linux';
         $arr = $os==='windows'? explode('\\',VKPHP) : explode('/',VKPHP);
         $project_name = end($arr);
-        if(isset($_SERVER['HTTP_HOST']) && $patharr[0] == $project_name){
+        if(isset($_SERVER['HTTP_HOST']) && isset($patharr[0]) && $patharr[0] == $project_name){
             // 去掉项目名称
             $patharr = array_slice($patharr,1,count($patharr)-1);
         }
