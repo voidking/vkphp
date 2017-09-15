@@ -14,9 +14,16 @@
         "homepage": "http://www.voidking.com",
         "role": "Student"
     }],
+    "repositories": {
+        "packagist": {
+            "type": "composer",
+            "url": "https://packagist.phpcomposer.com"
+        }
+    },
     "require": {
         "PHP": ">=5.3.0",
         "smarty/smarty": "~3.1",
-        "filp/whoops": "*"
+        "filp/whoops": "*",
+        "symfony/var-dumper": "*"
     }
 }

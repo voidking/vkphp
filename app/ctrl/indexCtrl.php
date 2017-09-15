@@ -11,8 +11,8 @@ class indexCtrl extends \core\render{
         $db = new \core\db();
         $sql = 'select * from vk_user';
         $result = $db->query($sql);
-        p($result);
-        p($result->fetchAll());
+        dump($result);
+        dump($result->fetchAll());
     }
 
     public function render(){
