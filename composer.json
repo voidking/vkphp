@@ -24,6 +24,7 @@
         "PHP": ">=5.3.0",
         "smarty/smarty": "~3.1",
         "filp/whoops": "*",
-        "symfony/var-dumper": "*"
+        "symfony/var-dumper": "*",
+        "catfan/medoo": "*"
     }
 }

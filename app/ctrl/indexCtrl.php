@@ -36,4 +36,17 @@ class indexCtrl extends \core\render{
         $log->log('this is log','log_test');
         echo '成功写入日志';
     }
+
+    public function medoo(){
+        $medoo = new \core\medoo();
+        dump($medoo);
+
+        // 查找
+        $ret = $medoo->select('user','*','username=voidking');
+        dump($ret);
+
+        // 
+
+
+    }
 }
