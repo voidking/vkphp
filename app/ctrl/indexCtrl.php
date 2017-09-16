@@ -42,11 +42,33 @@ class indexCtrl extends \core\render{
         dump($medoo);
 
         // 查找
-        $ret = $medoo->select('user','*','username=voidking');
+        $ret = $medoo->select('user','*',['username'=>'voidking']);
         dump($ret);
 
-        // 
+        // 插入
+        $data = array(
+            'username'=>'voidking1',
+            'password'=>'voidking1'
+        );
+        $ret = $medoo->insert('user',$data);
+        dump($medoo->id());
 
+        // 删除
+        $ret = $medoo->delete('user',['username'=>'voidking2']);
+        dump($ret->rowCount()); // 受影响的行数
 
+        // 修改
+        $ret = $medoo->update('user',['username'=>'voidking2'],['username'=>'voidking1']);
+        dump($ret->rowCount());
+    }
+
+    public function model(){
+        $user = new \app\model\user();
+        dump($user->list_all());
+        dump($user->find_by_id(1));
+        dump($user->find_by_condition(['username'=>'voidking']));
+        dump($user->add(['username'=>'voidking1','password'=>'voidking1']));
+        dump($user->edit(['username'=>'voidking2'],['username'=>'voidking1']));
+        dump($user->del(['username'=>'voidking2']));
     }
 }
