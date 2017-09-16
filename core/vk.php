@@ -13,6 +13,7 @@ class vk{
         $ctrl = $route->ctrl;
         $action = $route->action;
         $params = $route->params;
+        $params2 = $route->params2;
         if($dir == ''){
             $ctrl_file = APP.'/ctrl/'.$ctrl.'Ctrl.php';
             $ctrl_class = '\\app\\ctrl\\'.$ctrl.'Ctrl';

@@ -9,6 +9,7 @@ class route{
     public $ctrl='index';
     public $action='index';
     public $params=array();
+    public $params2=array();
     public function __construct(){
         //echo 'route is ready!';
 
@@ -21,7 +22,12 @@ class route{
         $this->action = \core\conf::get('ACTION','route_config');
         if(isset($_SERVER['REQUEST_URI']) && $_SERVER['REQUEST_URI'] != '/' ){
             $path = $_SERVER['REQUEST_URI'];
-            $patharr = explode('/',trim($path, '/'));
+            $patharr = explode('?',trim($path, '/'));
+            $patharr = $patharr[0];
+            if(isset($patharr[1])){
+                $this->params2 = $patharr[1];
+            }
+            $patharr = explode('/',trim($patharr, '/'));
         }else{
             $patharr = array();
         }

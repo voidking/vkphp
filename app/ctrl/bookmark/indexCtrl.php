@@ -1,6 +1,5 @@
 <?php
 namespace app\ctrl\bookmark;
-include CORE.'/render.php';
 
 class indexCtrl extends \core\render{
     public function index(){
