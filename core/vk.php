@@ -9,11 +9,18 @@ class vk{
         // include CORE.'/route.php';
         $route = new \core\route();
 
+        $dir = $route->dir;
         $ctrl = $route->ctrl;
         $action = $route->action;
         $params = $route->params;
-        $ctrl_file = APP.'/ctrl/'.$ctrl.'Ctrl.php';
-        $ctrl_class = '\\app\\ctrl\\'.$ctrl.'Ctrl';
+        if($dir == ''){
+            $ctrl_file = APP.'/ctrl/'.$ctrl.'Ctrl.php';
+            $ctrl_class = '\\app\\ctrl\\'.$ctrl.'Ctrl';
+        }else{
+            $ctrl_file = APP.'/ctrl/'.$dir.'/'.$ctrl.'Ctrl.php';
+            $ctrl_class = '\\app\\ctrl\\'.$dir.'\\'.$ctrl.'Ctrl';
+        }
+        
         if(is_file($ctrl_file)){
             include $ctrl_file;
             $ctrl_obj = new $ctrl_class;
