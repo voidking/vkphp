@@ -23,10 +23,10 @@ class route{
         if(isset($_SERVER['REQUEST_URI']) && $_SERVER['REQUEST_URI'] != '/' ){
             $path = $_SERVER['REQUEST_URI'];
             $patharr = explode('?',trim($path, '/'));
-            $patharr = $patharr[0];
             if(isset($patharr[1])){
                 $this->params2 = $patharr[1];
             }
+            $patharr = $patharr[0];
             $patharr = explode('/',trim($patharr, '/'));
         }else{
             $patharr = array();
