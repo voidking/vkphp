@@ -53,7 +53,6 @@ class userCtrl extends \core\render{
         if(!(isset($_POST['username']) 
             && isset($_POST['password']) 
             && isset($_POST['password2'])
-            && isset($_POST['captcha'])
             && $_POST['username'] !== ''
             && $_POST['password'] !== ''
             && $_POST['password2'] !== '')
@@ -104,6 +103,23 @@ class userCtrl extends \core\render{
                 'ext'=>'注册成功'
             );
             echo json_encode($result,JSON_UNESCAPED_UNICODE);
+        }
+    }
+
+    public function login(){
+        if(!(isset($_POST['username']) 
+            && isset($_POST['password']) 
+            && isset($_POST['password2'])
+            && $_POST['username'] !== ''
+            && $_POST['password'] !== ''
+            && $_POST['password2'] !== '')
+        ){
+            $result = array(
+                'code'=>'-1',
+                'ext'=>'参数不能为空'
+            );
+            echo json_encode($result,JSON_UNESCAPED_UNICODE);
+            return;
         }
     }
 }

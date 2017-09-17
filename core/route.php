@@ -9,7 +9,7 @@ class route{
     public $ctrl='index';
     public $action='index';
     public $params=array();
-    public $params2=array();
+    public $http_get_params='';
     public function __construct(){
         //echo 'route is ready!';
 
@@ -24,7 +24,7 @@ class route{
             $path = $_SERVER['REQUEST_URI'];
             $patharr = explode('?',trim($path, '/'));
             if(isset($patharr[1])){
-                $this->params2 = $patharr[1];
+                $this->http_get_params = $patharr[1];
             }
             $patharr = $patharr[0];
             $patharr = explode('/',trim($patharr, '/'));
