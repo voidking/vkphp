@@ -4,12 +4,8 @@ namespace core\util;
 
 class captcha
 {
-    public function get_captcha(){
-        session_start();
-        $this->create(300,80,40);
-    }
-
     public function create($width,$height,$fontsize){
+        session_start();
         //设置验证码图片大小的函数
         $image = imagecreate($width, $height);    
         //设置验证码颜色 imagecolorallocate(int im, int red, int green, int blue);
@@ -43,6 +39,8 @@ class captcha
         }
         //存到session
         $_SESSION['captcha_code'] = $captcha_code;
+        date_default_timezone_set("Asia/Shanghai");
+        $_SESSION['captcha_start'] = date('Y-m-d H:i:s');
         //增加干扰元素，设置雪花点
         for($i=0;$i<200;$i++){
             //设置点的颜色，50-200颜色比数字浅，不干扰阅读
@@ -69,16 +67,36 @@ class captcha
     public function check($code){
         session_start();
         if(isset($_SESSION['captcha_code'])){
+            $captcha_time_str = $_SESSION['captcha_start'];
+            date_default_timezone_set("Asia/Shanghai");
+            $now_time_str = date('Y-m-d H:i:s');
+            $ret = $this->check_time($captcha_time_str,$now_time_str);
+            if(!$ret){
+                return -2;//验证码超时
+            }
             if($_SESSION['captcha_code'] == $code){
                 unset($_SESSION['captcha_code']);
                 return 0;
             }else{
-                return -1;//验证码错误
+                return -3;//验证码错误
             }
         }else{
-            return -2;//没有设置验证码
+            return -1;//没有设置验证码
         }
-        
+    }
+
+    // 验证验证码时间是否过期
+    public function check_time($captcha_time_str,$now_time_str){
+        //$now_time_str = '2016-10-15 14:39:59';
+        //$captcha_time_str = '2016-10-15 14:30:00';
+        $captcha_time = strtotime($captcha_time_str);
+        $now_time = strtotime($now_time_str);
+        $period = floor(($now_time-$captcha_time)/60); //60s
+        if($period>=0 && $period<=10){ //10分钟内有效
+            return true;
+        }else{
+            return false;
+        }
     } 
 }
 

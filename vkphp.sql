@@ -27,10 +27,9 @@ CREATE TABLE `vk_user` (
   `screen_name` varchar(20) DEFAULT '低调的用户',
   `email` tinytext,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of vk_user
 -- ----------------------------
 INSERT INTO `vk_user` VALUES ('1', 'voidking', '1f7b1a1f50167ae828873279da4fe56d', 'VXUY1OYH9asT0mRE', '低调的用户', null);
-INSERT INTO `vk_user` VALUES ('3', '', 'a9885d233f9ed749d4e9f463791d2949', 'KOX6sfbHOisUvihO', '低调的用户', null);

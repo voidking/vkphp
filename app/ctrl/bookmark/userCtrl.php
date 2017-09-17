@@ -2,17 +2,26 @@
 namespace app\ctrl\bookmark;
 
 class userCtrl extends \core\render{
+
     public function index(){
         echo 'user ctrl';
     }
 
     public function captcha(){
         $captcha = new \core\util\captcha();
-        $captcha->get_captcha();
+        $captcha->create(300,80,40);
     }
 
     public function check(){
-        $code = $_POST['code'];
+        if(!(isset($_REQUEST['code']) && $_REQUEST['code'] !== '')){
+            $result = array(
+                'code'=>'-4',
+                'ext'=>'验证码不能为空'
+            );
+            echo json_encode($result,JSON_UNESCAPED_UNICODE);
+            return;
+        }
+        $code = $_REQUEST['code'];
         $captcha = new \core\util\captcha();
         $ret = $captcha->check($code);
         if($ret == 0){
@@ -20,20 +29,24 @@ class userCtrl extends \core\render{
                 'code'=>'0',
                 'ext'=>'验证成功'
             );
-            echo json_encode($result,JSON_UNESCAPED_UNICODE);
         }else if($ret == -1){
             $result = array(
                 'code'=>'-1',
-                'ext'=>'验证码错误'
+                'ext'=>'请先获取验证码'
             );
-            echo json_encode($result,JSON_UNESCAPED_UNICODE);
         }else if($ret == -2){
             $result = array(
                 'code'=>'-2',
-                'ext'=>'请先获取验证码'
+                'ext'=>'验证码超时'
             );
-            echo json_encode($result,JSON_UNESCAPED_UNICODE);
+        }else if($ret == -3){
+            $result = array(
+                'code'=>'-3',
+                'ext'=>'验证码错误'
+            );
         }
+
+        echo json_encode($result,JSON_UNESCAPED_UNICODE);
     }
 
     public function reg(){
@@ -44,7 +57,6 @@ class userCtrl extends \core\render{
             && $_POST['username'] !== ''
             && $_POST['password'] !== ''
             && $_POST['password2'] !== '')
-            && $_POST['captcha'] !== ''
         ){
             $result = array(
                 'code'=>'-1',
@@ -57,8 +69,6 @@ class userCtrl extends \core\render{
         $username = $_POST['username'];
         $password = $_POST['password'];
         $password2 = $_POST['password2'];
-        $captcha = $_POST['captcha'];
-
 
         if($password !== $password2){
             $result = array(
