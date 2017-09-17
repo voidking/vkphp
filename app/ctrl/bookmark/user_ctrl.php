@@ -1,7 +1,7 @@
 <?php
 namespace app\ctrl\bookmark;
 
-class userCtrl extends \core\render{
+class user_ctrl extends \core\render{
 
     public function index(){
         echo 'user ctrl';

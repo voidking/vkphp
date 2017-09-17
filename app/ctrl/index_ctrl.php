@@ -2,7 +2,7 @@
 namespace app\ctrl;
 include CORE.'/render.php';
 
-class indexCtrl extends \core\render{
+class index_ctrl extends \core\render{
     public function index(){
         echo 'index ctrl';
     }

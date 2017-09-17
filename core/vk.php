@@ -15,11 +15,11 @@ class vk{
         $params = $route->params;
         $http_get_params = $route->http_get_params;
         if($dir == ''){
-            $ctrl_file = APP.'/ctrl/'.$ctrl.'Ctrl.php';
-            $ctrl_class = '\\app\\ctrl\\'.$ctrl.'Ctrl';
+            $ctrl_file = APP.'/ctrl/'.$ctrl.'_ctrl.php';
+            $ctrl_class = '\\app\\ctrl\\'.$ctrl.'_ctrl';
         }else{
-            $ctrl_file = APP.'/ctrl/'.$dir.'/'.$ctrl.'Ctrl.php';
-            $ctrl_class = '\\app\\ctrl\\'.$dir.'\\'.$ctrl.'Ctrl';
+            $ctrl_file = APP.'/ctrl/'.$dir.'/'.$ctrl.'_ctrl.php';
+            $ctrl_class = '\\app\\ctrl\\'.$dir.'\\'.$ctrl.'_ctrl';
         }
         
         if(is_file($ctrl_file)){
