@@ -159,4 +159,10 @@ class user_ctrl extends \core\render{
         }    
         
     }
+
+    public function to_login(){
+        $this->smarty->assign('basepath',$this->basepath);
+        $this->smarty->assign('assets',$this->assets);
+        $this->smarty->display('bookmark/user/login.html');
+    }
 }

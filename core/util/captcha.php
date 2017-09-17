@@ -39,7 +39,6 @@ class captcha
         }
         //存到session
         $_SESSION['captcha_code'] = $captcha_code;
-        date_default_timezone_set("Asia/Shanghai");
         $_SESSION['captcha_start'] = date('Y-m-d H:i:s');
         //增加干扰元素，设置雪花点
         for($i=0;$i<200;$i++){
