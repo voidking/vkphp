@@ -21,6 +21,11 @@ class model extends \core\medoo{
     }
 
     public function find_by_condition($condition){
+        $ret = $this->get($this->table_name,'*',$condition);
+        return $ret;
+    }
+
+    public function list_by_condition($condition){
         $ret = $this->select($this->table_name,'*',$condition);
         return $ret;
     }

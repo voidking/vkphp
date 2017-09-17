@@ -108,11 +108,9 @@ class userCtrl extends \core\render{
 
     public function login(){
         if(!(isset($_POST['username']) 
-            && isset($_POST['password']) 
-            && isset($_POST['password2'])
+            && isset($_POST['password'])
             && $_POST['username'] !== ''
-            && $_POST['password'] !== ''
-            && $_POST['password2'] !== '')
+            && $_POST['password'] !== '')
         ){
             $result = array(
                 'code'=>'-1',
@@ -121,5 +119,44 @@ class userCtrl extends \core\render{
             echo json_encode($result,JSON_UNESCAPED_UNICODE);
             return;
         }
+
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+
+        $user = new \app\model\user();
+        $ret = $user->find_by_condition(['username'=>$username]);
+        if($ret){
+            $salt = $ret['salt'];
+            $req_password = md5($password.$salt);
+            $real_password = $ret['password'];
+            if($req_password == $real_password){
+                session_start();
+                $_SESSION['user_id'] = $ret['id'];
+                $result = array(
+                    'code'=>'0',
+                    'ext'=>'登录成功'
+                );
+                echo json_encode($result,JSON_UNESCAPED_UNICODE);
+            }
+        }else{
+            $result = array(
+                'code'=>'-2',
+                'ext'=>'用户不存在'
+            );
+            echo json_encode($result,JSON_UNESCAPED_UNICODE);
+        }
+    }
+
+    public function logout(){
+        session_start();
+        if(isset($_SESSION['user_id'])){
+            unset($_SESSION['user_id']);
+            $result = array(
+                'code'=>'0',
+                'ext'=>'下线成功'
+            );
+            echo json_encode($result,JSON_UNESCAPED_UNICODE);
+        }    
+        
     }
 }
