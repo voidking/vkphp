@@ -8,6 +8,12 @@
 
 3、导入vkphp项目中的vkphp.sql文件。
 
+4、更改app/smarty/templates_c文件夹权限。
+```
+cd app/smarty/
+chmod -R 777 templates_c
+```
+
 # 参考教程
 [从零开始打造自己的PHP框架](http://www.imooc.com/learn/696)   
 
