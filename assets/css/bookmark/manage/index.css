@@ -1,0 +1,17 @@
+.b-box{
+    border: 1px solid #ccc;
+}
+
+.b-title{
+    padding: 5px;
+    border-bottom: 1px solid #ccc;
+}
+
+.b-item-parent{
+    padding: 10px;
+}
+
+.b-item{
+    padding: 5px;
+    border: 1px solid #ccc;
+}

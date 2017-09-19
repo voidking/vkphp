@@ -1,9 +1,10 @@
 <?php
 namespace app\ctrl\bookmark;
 
-class user_ctrl extends \core\render{
-
+class manage_ctrl extends \core\render{
     public function index(){
-        echo 'manage ctrl';
+        $this->smarty->assign('basepath',$this->basepath);
+        $this->smarty->assign('assets',$this->assets);
+        $this->smarty->display('bookmark/manage/index.html');
     }
 }

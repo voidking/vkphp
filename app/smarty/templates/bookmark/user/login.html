@@ -2,12 +2,12 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="{{$assets}}/css/login.css">
-    <title>VKPHP-Bookmark登录注册</title>
+    <link rel="stylesheet" href="{{$assets}}/css/bookmark/user/login.css">
+    <title>VKPHP-BOOKMARK登录注册</title>
 </head>
 
 <body>
-    <h1>VKPHP-Bookmark登录注册</h1>
+    <h1>VKPHP-BOOKMARK</h1>
     <div class="login" style="margin-top:50px;">
         <div class="header">
             <div class="switch" id="switch">
@@ -61,10 +61,10 @@
                 <form name="form2" id="reg_form" accept-charset="utf-8" action="" method="post">
                     <input type="hidden" name="to" value="reg" />
                     <input type="hidden" name="did" value="0" />
-                    <ul class="reg_form" id="reg-ul">
-                        <div id="userCue" class="cue">
+                    <ul class="reg_form" id="reg-ul" style="padding-top: 30px;">
+                        <!-- <div id="userCue" class="cue">
                             快速注册请注意格式
-                        </div>
+                        </div> -->
                         <li>
                             <label for="username" class="input-tips2">
                                 用户名：
@@ -110,7 +110,7 @@
 <input type="hidden" id="basepath" value="{{$basepath}}">
 <script type="text/javascript" src="{{$assets}}/lib/jquery/jquery.min.js"></script>
 <script type="text/javascript" src="{{$assets}}/lib/layer/layer.js"></script>
-<script type="text/javascript" src="{{$assets}}/js/login.js"></script>
+<script type="text/javascript" src="{{$assets}}/js/bookmark/user/login.js"></script>
 <script>
 $(function() {
     $('#login_form').submit(function(event) {

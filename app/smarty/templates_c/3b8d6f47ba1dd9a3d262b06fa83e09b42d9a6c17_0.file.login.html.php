@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.31, created on 2017-09-17 21:47:54
+/* Smarty version 3.1.31, created on 2017-09-19 10:01:16
   from "C:\laragon\www\vkphp\app\smarty\templates\bookmark\user\login.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.31',
-  'unifunc' => 'content_59be7d0af0e6b0_44606537',
+  'unifunc' => 'content_59c07a6c028dc0_72858505',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3b8d6f47ba1dd9a3d262b06fa83e09b42d9a6c17' => 
     array (
       0 => 'C:\\laragon\\www\\vkphp\\app\\smarty\\templates\\bookmark\\user\\login.html',
-      1 => 1505656071,
+      1 => 1505786473,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_59be7d0af0e6b0_44606537 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59c07a6c028dc0_72858505 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="zh">
@@ -31,13 +31,11 @@ echo $_smarty_tpl->tpl_vars['assets']->value;
 $_prefixVariable1=ob_get_clean();
 echo $_prefixVariable1;?>
 /css/login.css">
-    <title>买家登录注册</title>
+    <title>VKPHP-Bookmark登录注册</title>
 </head>
 
 <body>
-    <h1>
-        买家登录注册
-    </h1>
+    <h1>VKPHP-Bookmark</h1>
     <div class="login" style="margin-top:50px;">
         <div class="header">
             <div class="switch" id="switch">
@@ -91,10 +89,10 @@ echo $_prefixVariable1;?>
                 <form name="form2" id="reg_form" accept-charset="utf-8" action="" method="post">
                     <input type="hidden" name="to" value="reg" />
                     <input type="hidden" name="did" value="0" />
-                    <ul class="reg_form" id="reg-ul">
-                        <div id="userCue" class="cue">
+                    <ul class="reg_form" id="reg-ul" style="padding-top: 30px;">
+                        <!-- <div id="userCue" class="cue">
                             快速注册请注意格式
-                        </div>
+                        </div> -->
                         <li>
                             <label for="username" class="input-tips2">
                                 用户名：
