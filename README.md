@@ -8,10 +8,10 @@
 
 3、导入vkphp项目中的vkphp.sql文件。
 
-4、更改app/smarty/templates_c文件夹权限。
+4、更改app/smarty文件夹权限。
 ```
-cd app/smarty/
-chmod -R 777 templates_c
+cd app/
+chmod -R 777 smarty
 ```
 
 # 参考教程
