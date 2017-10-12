@@ -26,8 +26,8 @@ phpunit.phar
 # local phpunit config
 /phpunit.xml
 
-tests/_output/*
-tests/_support/_generated
-
 # runtime files
-runtime/*
+runtime/
+
+# smarty cache
+templates_c/
