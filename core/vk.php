@@ -3,7 +3,7 @@
 namespace core;
 
 class vk{
-    public function run(){
+    public static function run(){
         include CORE.'/autoload.php';
         spl_autoload_register('\core\autoload::load');
         // include CORE.'/route.php';
