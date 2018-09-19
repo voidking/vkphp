@@ -22,3 +22,6 @@ chmod -R 777 smarty
 [从零开始打造自己的PHP框架——第1章](http://www.voidking.com/2017/08/29/deve-vkphp-1/)
 
 [从零开始打造自己的PHP框架——第2章](http://www.voidking.com/2017/08/30/deve-vkphp-2/)
+
+# 相关项目
+使用vkphp完成的项目：[宣讲会签到项目](https://github.com/voidking/enroll)
