@@ -17,11 +17,21 @@ chmod -R 777 smarty
 # 参考教程
 [从零开始打造自己的PHP框架](http://www.imooc.com/learn/696)   
 
-[从零开始打造自己的PHP框架——第0章](http://www.voidking.com/2017/08/27/deve-vkphp-0/)   
+[从零开始打造自己的PHP框架——第0章](http://www.voidking.com/dev-vkphp-0/)   
 
-[从零开始打造自己的PHP框架——第1章](http://www.voidking.com/2017/08/29/deve-vkphp-1/)
+[从零开始打造自己的PHP框架——第1章](http://www.voidking.com/dev-vkphp-1/)
 
-[从零开始打造自己的PHP框架——第2章](http://www.voidking.com/2017/08/30/deve-vkphp-2/)
+[从零开始打造自己的PHP框架——第2章](http://www.voidking.com/dev-vkphp-2/)
+
+[从零开始打造自己的PHP框架——第3章](http://www.voidking.com/dev-vkphp-5/)   
+
+[从零开始打造自己的PHP框架——第4章](http://www.voidking.com/dev-vkphp-4/)
+
+[从零开始打造自己的PHP框架——第5章](http://www.voidking.com/dev-vkphp-5/)
+
+[从零开始打造自己的PHP框架——第6章](http://www.voidking.com/dev-vkphp-6/)
+
+[从零开始打造自己的PHP框架——第7章](http://www.voidking.com/dev-vkphp-7/)
 
 # 相关项目
 使用vkphp完成的项目：[宣讲会签到项目](https://github.com/voidking/enroll)
